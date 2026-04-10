@@ -2,21 +2,26 @@
 #define PLAYER_H
 
 #include <string>
+#include "item.h"
 using namespace std;
 
 class Player
 {
-private:
-    string name;
-    int hp;
+private: 
+    Item item;
+    string inventory;
+    int kills;
+    int spared;
+    int victories;
 
 public:
-    Player(const string& name, int hp);
+    Player(Item item, const string& inventory, int kills, int spared, int victories);
 
-    string getName() const;
-    int getHp() const;
-
-    void afficher() const;
+    Item getItem() const;
+    string getInventory() const;
+    int getKills() const;
+    int getSpared() const;
+    int getVictories() const;
 };
 
 #endif
