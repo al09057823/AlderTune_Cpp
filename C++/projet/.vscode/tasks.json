@@ -1,0 +1,35 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build ALTERDUNE",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}\\Main.cpp",
+                "${workspaceFolder}\\Entity.cpp",
+                "${workspaceFolder}\\Player.cpp",
+                "${workspaceFolder}\\Monster.cpp",
+                "${workspaceFolder}\\item.cpp",
+                "${workspaceFolder}\\Act.cpp",
+                "${workspaceFolder}\\Combat.cpp",
+                "${workspaceFolder}\\bestiary.cpp",
+                "-o",
+                "${workspaceFolder}\\alterdune.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build all ALTERDUNE source files"
+        }
+    ],
+    "version": "2.0.0"
+}

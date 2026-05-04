@@ -1,27 +1,42 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <string>
+#include "Entity.h"
 #include "item.h"
+#include <vector>
+#include <string>
+
 using namespace std;
 
-class Player
+class Player : public Entity
 {
-private: 
-    Item item;
-    string inventory;
+private:
+    vector<Item> inventory;
+    int victories;
     int kills;
     int spared;
-    int victories;
 
 public:
-    Player(Item item, const string& inventory, int kills, int spared, int victories);
+    Player(const string& name);
 
-    Item getItem() const;
-    string getInventory() const;
+    string getTypeName() const override;
+
+    vector<Item>& getInventory();
+    const vector<Item>& getInventory() const;
+
+    int getVictories() const;
     int getKills() const;
     int getSpared() const;
-    int getVictories() const;
+
+    void setInventory(const vector<Item>& items);
+
+    void addVictory();
+    void addKill();
+    void addSpare();
+
+    void showStats() const;
+    void showInventory() const;
+    bool useItem(int index);
 };
 
 #endif

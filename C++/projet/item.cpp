@@ -1,7 +1,8 @@
-#include "Item.h"
+#include "item.h"
 #include "Player.h"
 
-Item::Item() : name(""), type("HEAL"), value(0), quantity(0)
+Item::Item() 
+    : name(""), type("HEAL"), value(0), quantity(0)
 {
 }
 
@@ -28,4 +29,29 @@ int Item::getValue() const
 int Item::getQuantity() const
 {
     return quantity;
+}
+
+void Item::setQuantity(int newQuantity)
+{
+    if (newQuantity < 0)
+    {
+        quantity = 0;
+    }
+    else
+    {
+        quantity = newQuantity;
+    }
+}
+
+bool Item::isAvailable() const
+{
+    return quantity > 0;
+}
+
+void Item::useOne()
+{
+    if (quantity > 0)
+    {
+        quantity--;
+    }
 }

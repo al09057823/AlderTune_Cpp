@@ -14,13 +14,22 @@ private:
     int def;
 
 public:
-    Entity(const string& name, int hp, int maxHp, int atk, int def);
+    Entity(const string& name, int maxHp, int atk, int def);
+    virtual ~Entity() = default;
+
+    virtual string getTypeName() const = 0;
 
     string getName() const;
     int getHp() const;
     int getMaxHp() const;
     int getAtk() const;
     int getDef() const;
+
+    void setCurrentHp(int hp);
+    void takeDamage(int damage);
+    void heal(int amount);
+
+    bool isAlive() const;
 
 };
 

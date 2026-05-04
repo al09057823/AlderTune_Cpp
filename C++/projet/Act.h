@@ -1,5 +1,5 @@
 #ifndef ACT_H
-#define ATC_H
+#define ACT_H
 
 #include <string>
 using namespace std;
@@ -7,14 +7,15 @@ using namespace std;
 class Act 
 {
 private :
-    int id;
+    string id;
     string description;
     int mercyImpact;
 
 public :
-    Act(int id, const string& description, int mercyImpact);
+    Act();
+    Act(const string& id, const string& description, int mercyImpact);
 
-    int getId() const;
+    string getId() const;
     string getDescription() const;
     int getMercyImpact() const;
 };

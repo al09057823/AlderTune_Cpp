@@ -2,14 +2,17 @@
 #include <iostream> 
 using namespace std;
 
-Act::Act(int id, const string& description, int mercyImpact)
+Act::Act()
+    : id(""), description(""), mercyImpact(0)
 {
-    this -> id = id;
-    this -> description = description;
-    this -> mercyImpact = mercyImpact;
 }
 
-int Act::getId() const
+Act::Act(const string& id, const string& description, int mercyImpact)
+    : id(id), description(description), mercyImpact(mercyImpact)
+{
+}
+
+string Act::getId() const
 {
     return id;
 }

@@ -1,18 +1,19 @@
 #ifndef BESTIARY_H
 #define BESTIARY_H
 
+#include "Monster.h"
 #include <string>
+#include <vector>
 using namespace std;
 
 class Bestiary 
 {
 private :
-    string defeatedMonsters;
+    vector<string> entries;
 
 public :
-    Bestiary(const string& defeatedMonsters);
-    
-    string getDefeatedMonsters() const;
+    void addMonster(const Monster& monster, const string& result);
+    void showBestiary() const;
 };
 
 #endif

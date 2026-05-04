@@ -24,6 +24,9 @@ public:
     int getValue() const;
     int getQuantity() const;
     
+    void setQuantity(int quantity);
+    bool isAvailable() const;
+    void useOne();
 };
 
 #endif
